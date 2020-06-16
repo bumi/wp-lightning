@@ -180,6 +180,26 @@ class Lightning_Publisher {
     </div>
     <?php
   }
+  /* Function to validate options */
+  
+public function validate_options($lnd_address, $lnd_macaroon, $lnd_tls_cert)
+{
+    if( preg_match('^[\s]*[\s]*$', $lnd_address))
+    {
+        return false;
+    }	
+  else if (preg_match('^[\s]*[\s]*$', $lnd_macaroon)){
+
+    return false;
+  }
+else if (preg_match('^[\s]*[\s]*$', $lnd_tls_cert)){
+ 
+    return false;
+}
+    return true;
+}
+
+
   public function field_address(){
     printf('<input type="text" name="lnd_[address]" value="%s" />', esc_attr($this->options['address']));
   }
