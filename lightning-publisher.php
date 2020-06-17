@@ -188,11 +188,11 @@ public function validate_options($lnd_address, $lnd_macaroon, $lnd_tls_cert)
     {
         return false;
     }	
-  else if (preg_match('^[\s]*[\s]*$', $lnd_macaroon)){
+    if (preg_match('^[\s]*[\s]*$', $lnd_macaroon)){
 
     return false;
   }
-else if (preg_match('^[\s]*[\s]*$', $lnd_tls_cert)){
+  if (preg_match('^[\s]*[\s]*$', $lnd_tls_cert)){
  
     return false;
 }
