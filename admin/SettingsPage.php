@@ -21,6 +21,7 @@ abstract class SettingsPage
         add_action('admin_menu', array($this, 'init_page'));
         add_action('admin_init', array($this, 'init_fields'));
     }
+    
 
     public function init_page()
     {

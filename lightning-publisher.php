@@ -58,7 +58,7 @@ class WP_LN_Paywall
     // admin
     add_action('admin_menu', array($this, 'admin_menu'));
     // initializing admin pages
-    new LNP_Dashboard($this, 'lnp_settings');
+    new LNP_Dashboard($this, null);
     new BalancePage($this, 'lnp_settings');
     $paywall_page = new PaywallPage($this, 'lnp_settings');
     $connection_page = new ConnectionPage($this, 'lnp_settings');
@@ -443,7 +443,7 @@ class WP_LN_Paywall
    */
   public function admin_menu()
   {
-    add_menu_page('Lighting Paywall', 'Lighting Paywall', 'manage_options', 'lnp_settings');
+    add_menu_page('Lighting Paywall', null, 'manage_options', 'lnp_settings');
   }
 }
 
