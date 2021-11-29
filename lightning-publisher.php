@@ -443,7 +443,7 @@ class WP_LN_Paywall
    */
   public function admin_menu()
   {
-    add_menu_page('Lighting Paywall', null, 'manage_options', 'lnp_settings');
+    add_menu_page('Lighting Paywall', 'Lighting Paywall', 'manage_options', 'lnp_settings');
   }
 }
 
