@@ -9,6 +9,12 @@ class LNP_Dashboard extends SettingsPage
 
     protected $page_title = 'Dashboard';
     protected $menu_title = 'Dashboard';
+    
+
+    public function init_page()
+    {
+
+    }
 
     public function renderer()
     {
