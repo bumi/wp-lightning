@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b0f7e4b7b8004a2c0c29ec8d018f5f1",
+    "content-hash": "49f5c76c5d145b26a895a72dd63d8840",
     "packages": [
         {
             "name": "bitwasp/bech32",
@@ -163,6 +163,60 @@
                 "source": "https://github.com/Bit-Wasp/buffertools-php/tree/0.5"
             },
             "time": "2020-01-17T21:31:49+00:00"
+        },
+        {
+            "name": "btcpayserver/btcpayserver-greenfield-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/btcpayserver/btcpayserver-greenfield-php.git",
+                "reference": "a7fb36f1e41d497c1c97fe576a4d9b7845363908"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/btcpayserver/btcpayserver-greenfield-php/zipball/a7fb36f1e41d497c1c97fe576a4d9b7845363908",
+                "reference": "a7fb36f1e41d497c1c97fe576a4d9b7845363908",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^9.5",
+                "vimeo/psalm": "^4.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BTCPayServer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wouter Samaey",
+                    "email": "wouter.samaey@storefront.be"
+                },
+                {
+                    "name": "Andreas Tasch",
+                    "email": "andy.tasch@gmail.com"
+                }
+            ],
+            "description": "BTCPay Server Greenfield API PHP client library.",
+            "support": {
+                "issues": "https://github.com/btcpayserver/btcpayserver-greenfield-php/issues",
+                "source": "https://github.com/btcpayserver/btcpayserver-greenfield-php/tree/master"
+            },
+            "time": "2021-11-19T11:39:14+00:00"
         },
         {
             "name": "composer/semver",
@@ -1406,7 +1460,8 @@
         "octan/lndhub": 20,
         "firebase/php-jwt": 20,
         "tkijewski/php-lnurl": 20,
-        "jorijn/bitcoin-bolt11": 20
+        "jorijn/bitcoin-bolt11": 20,
+        "btcpayserver/btcpayserver-greenfield-php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
