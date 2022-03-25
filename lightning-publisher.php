@@ -17,6 +17,7 @@ require_once 'vendor/autoload.php';
 require_once 'lightning_address.php';
 
 require_once 'LnpWidget.php';
+require_once 'donation-widget.php';
 require_once 'admin/dashboard.php';
 require_once 'admin/balance.php';
 require_once 'admin/paywall.php';
@@ -401,6 +402,7 @@ class WP_LN_Paywall
   {
     $has_paid = self::has_paid_for_all();
     register_widget(new LnpWidget($has_paid, $this->paywall_options));
+    register_widget(new DonationWidget(false, $this->paywall_options));
   }
 
   // endpoint idea from: https://webdevstudios.com/2015/07/09/creating-simple-json-endpoint-wordpress/
