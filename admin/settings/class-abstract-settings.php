@@ -411,6 +411,9 @@ abstract class LNP_SettingsPage
         // Merge args with defaults and filter empty values
         $parsed_args = wp_parse_args($args['field'], $defaults);
         $parsed_args = array_filter($parsed_args);
+        $value       = isset($parsed_args['value'])
+            ? $parsed_args['value']
+            : '';
 
         // We will save HTML markup in array
         // and join() later
@@ -422,7 +425,6 @@ abstract class LNP_SettingsPage
         {
             // Don't add autocomplete arg to checkbox
             unset($parsed_args['autocomplete']);
-            error_log( print_r($parsed_args, true) );
         }
         
         // HTML output starts now
@@ -473,7 +475,7 @@ abstract class LNP_SettingsPage
         }
 
         // Mark checkbox checked
-        if ( 'checkbox' == $parsed_args['type'] && 'on' == $parsed_args['value'] )
+        if ( 'checkbox' == $parsed_args['type'] && 'on' == $value )
         {
             $output[] = 'checked';
         }

@@ -139,6 +139,7 @@ class LNP_PaywallPage extends LNP_SettingsPage
         $fields[] = array(
             'tab'     => 'integrations',
             'field'   => array(
+                'type'        => 'checkbox',
                 'name'        => 'paywall_lnurl_rss',
                 'label'       => __( 'Add LNURL to RSS items', 'lnp-alby' ),
                 'description' => __( 'Add lightning payment details to RSS items', 'lnp-alby'),
