@@ -72,9 +72,11 @@ window.addEventListener("DOMContentLoaded", function () {
   function showQRCode(invoice, options) {
     var button = options.target.querySelector("button.wp-lnp-btn");
     button.outerHTML = `<div class="wp-lnp-qrcode">
-      <img src="https://chart.googleapis.com/chart?&chld=M|0&cht=qr&chs=200x200&chl=${
+      <a href="lightning:${
         invoice.payment_request
-      }">
+      }"><img src="https://chart.googleapis.com/chart?&chld=M|0&cht=qr&chs=200x200&chl=${
+        invoice.payment_request
+      }"></a>
       <br />
       <a href="lightning:${
         invoice.payment_request
