@@ -69,8 +69,7 @@ class WP_Lightning_Admin {
 	}
 
 	/**
-     * Add Block
-     * @return [type] [description]
+     * Register the donation gutenberg block
      */
     public function init_donation_block() {
 
@@ -123,11 +122,49 @@ class WP_Lightning_Admin {
         return do_shortcode("[alby_donation_block]");
     }
 
-	public function sc_alby_donation_block() {
+    /**
+     * Register the paywall gutenberg block
+     */
+    public function init_paywall_block() {
 
-        $donationWidget = new LNP_DonationsWidget($this->plugin);
+        // Gutenberg is not active.
+        if ( ! function_exists( 'register_block_type' ) ) {
+            return;
+        }
 
-        return $donationWidget->get_donation_block_html();
+        // Path to Js that handles block functionality
+        wp_register_script(
+            'alby/paywall-js',
+            sprintf(
+                '%s/assets/js/blocks/paywall/paywall.js',
+                untrailingslashit(WP_LN_ROOT_URI)
+            )
+        );
+
+        wp_register_style(
+            'alby/paywall-css',
+            sprintf(
+                '%s/assets/css/blocks/paywall.css',
+                untrailingslashit(WP_LN_ROOT_URI)
+            )
+        );
+
+
+        register_block_type( 'alby/paywall', array(
+            'api_version'     => 2,
+            'title'           => 'Alby: Paywall Payment',
+            'category'        => 'common',
+            'description'     => 'Used to separate public and private content to initialize paywall',
+            'icon'            => 'icon-alby',
+            'editor_script'   => 'alby/paywall-js',
+            'editor_style'    => 'alby/paywall-css',
+            'render_callback' => (array($this, 'render_paywall_block')),
+        ));
+    }
+
+    public function render_paywall_block( $atts )
+    {
+        return do_shortcode("[lnd-amount]");
     }
 
 	function widget_init()
