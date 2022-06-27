@@ -13,9 +13,9 @@ class LNP_DonationsWidget
          * @verify : Check/Verify payment has been made
          */
         this.endpoints = {
-            base: '/wp-json/lnp-alby/v1',
-            donate: '/wp-json/lnp-alby/v1' + '/donate',
-            verify: '/wp-json/lnp-alby/v1' + '/verify',
+            base: LN_Paywall.rest_base,
+            donate: LN_Paywall.rest_base + '/donate',
+            verify: LN_Paywall.rest_base + '/verify',
         }
 
         // Widget wrapper CSS class

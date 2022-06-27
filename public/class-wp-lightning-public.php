@@ -53,7 +53,6 @@ class WP_Lightning_Public {
 		 */
 
 		wp_enqueue_style( $this->plugin->get_plugin_name(), plugin_dir_url( __FILE__ ) . 'css/wp-lightning-public.css', array(), $this->plugin->get_version(), 'all' );
-
 	}
 
 	/**
