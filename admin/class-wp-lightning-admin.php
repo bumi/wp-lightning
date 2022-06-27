@@ -174,7 +174,7 @@ class WP_Lightning_Admin {
     {
         $amount = $atts['amount'] ?? 1000;
         $text = $atts['text'] ?? 'Pay now';
-        return do_shortcode("[lnd-amount amount={$amount} button_text={$text}]");
+        return "[lnd-amount amount={$amount} button_text={$text}]";
     }
 
 	function widget_init()
