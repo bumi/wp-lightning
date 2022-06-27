@@ -172,8 +172,8 @@ class WP_Lightning_Admin {
 
     public function render_paywall_block( $atts )
     {
-        $amount = $atts['amount'];
-        $text = $atts['text'];
+        $amount = $atts['amount'] ?? 1000;
+        $text = $atts['text'] ?? 'Pay now';
         return do_shortcode("[lnd-amount amount={$amount} button_text={$text}]");
     }
 

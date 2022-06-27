@@ -49,12 +49,11 @@
                 );
                 
             },
-            save: function ()
+            save: function ( props )
             {
                 return [
                     el(
-                       'div', {},
-                       el('hr', {className: "lnp-alby-paywall-widget" })
+                       'p', {}, `[lnd-amount amount=${props.attributes.amount} button_text="${props.attributes.text || 'Pay now'}"]`
                     ),
                 ];
             },
