@@ -284,6 +284,8 @@ class WP_Lightning
 		// get page options
 		$this->connection_options = $connection_page->options;
 		$this->paywall_options    = $paywall_page->options;
+		// Set the amount key as well to paywall_amount to override from shortcode
+		$this->paywall_options['amount'] = $this->paywall_options['paywall_amount'];
 		$this->donation_options   = $donation_page->options;
 	}
 

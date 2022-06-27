@@ -158,13 +158,23 @@ class WP_Lightning_Admin {
             'icon'            => 'icon-alby',
             'editor_script'   => 'alby/paywall-js',
             'editor_style'    => 'alby/paywall-css',
+            'attributes'      => [
+                'amount'      => [
+                    'type'    => 'number'
+                ],
+                'text'      => [
+                    'type'    => 'string'
+                ]
+            ],
             'render_callback' => (array($this, 'render_paywall_block')),
         ));
     }
 
     public function render_paywall_block( $atts )
     {
-        return do_shortcode("[lnd-amount]");
+        $amount = $atts['amount'];
+        $text = $atts['text'];
+        return do_shortcode("[lnd-amount amount={$amount} button_text={$text}]");
     }
 
 	function widget_init()
