@@ -372,6 +372,8 @@ class WP_Lightning
 		$this->loader->add_filter('the_content', $this->plugin_public, 'ln_paywall_filter');
 		// Add donation widget to the content
 		$this->loader->add_filter('the_content', $donation_widget, 'set_donation_box');
+
+		remove_filter('the_content', 'wptexturize');
 	}
 
 	/**

@@ -51,11 +51,17 @@
             },
             save: function ( props )
             {
-                return [
-                    el(
-                       'p', {}, `[lnd-amount amount=${props.attributes.amount} button_text="${props.attributes.text || 'Pay now'}"]`
-                    ),
-                ];
+              let amount = 1000;
+              let text = 'Pay now';
+              if (props?.attributes?.amount != undefined) {
+                amount = props?.attributes?.amount;
+              }
+              if (props?.attributes?.text != undefined) {
+                text = props?.attributes?.text;
+              }
+              return el(
+                'p', {}, `[ln amount=${amount} button_text="${text}"]`
+              )
             },
         } );
     })( window.wp.blocks, window.wp.blockEditor, window.wp.element, window.wp.components, window.wp.i18n );
